@@ -3,6 +3,7 @@ export default interface IUser {
 	name: string;
 	login: string;
 	isApproved: boolean;
-	imageURL?: string;
 	lastVisitDateTime: string;
+	link: string;
+	imageURL?: string;
 }

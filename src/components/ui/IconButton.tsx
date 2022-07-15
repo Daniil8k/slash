@@ -2,7 +2,7 @@ import { FC } from "react";
 import Icon, { IconProps } from "./Icon";
 
 interface IconButtonProps extends IconProps {
-	onClick: () => void;
+	onClick?: () => void;
 }
 
 const IconButton: FC<IconButtonProps> = ({
@@ -13,7 +13,7 @@ const IconButton: FC<IconButtonProps> = ({
 	return (
 		<button
 			className={[
-				"cursor-pointer border-[1px] rounded-sm border-transparent hover:border-neutral",
+				"cursor-pointer",
 				className,
 			].join(" ")}
 			onClick={onClick}

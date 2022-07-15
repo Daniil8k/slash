@@ -5,6 +5,7 @@ export default interface IPost {
 	title: string;
 	commentsCount: number;
 	likesCount: number;
+	isLiked: boolean;
 	imageURL?: string;
 	user: IUser;
 }
