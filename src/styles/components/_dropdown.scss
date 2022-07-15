@@ -1,0 +1,32 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--color-card-light);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: $s-20;
+    border-radius: 4px;
+    overflow: hidden;
+
+    button {
+        width: 100%;
+        padding: $s-1 $s-2;
+        text-align: left;
+        font-size: $text-xs;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: var(--color-neutral);
+        }
+    }
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
