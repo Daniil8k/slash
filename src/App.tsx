@@ -19,7 +19,7 @@ function App() {
 	};
 	
 	const renderPost = (item: IPost) => {
-		return <Post post={item} key={item.id} onLike={likePost} />;
+		return <Post post={item} key={item.id} onLikeClicked={likePost} />;
 	};
 
 	return (

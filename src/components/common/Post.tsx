@@ -8,7 +8,8 @@ import ShowMoreText from "../ui/ShowMoreText";
 
 interface PostItemProps {
 	post: IPost;
-	onLike: (postId: number) => void;
+	onLikeClicked: (postId: number) => void;
+	onCommentClicked: (postId: number) => void;
 	remove?: () => void;
 	update?: () => void;
 }
@@ -18,7 +19,13 @@ interface PostFooterBtnProps extends IconProps {
 	onClick: () => void;
 }
 
-const Post: FC<PostItemProps> = ({ post, onLike, remove, update }) => {
+const Post: FC<PostItemProps> = ({
+	post,
+	onLikeClicked,
+	onCommentClicked,
+	remove,
+	update,
+}) => {
 	const EMPTY_IMAGE_SRC =
 		"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D";
 	const user = post.user;
@@ -26,9 +33,13 @@ const Post: FC<PostItemProps> = ({ post, onLike, remove, update }) => {
 	return (
 		<div className="w-[500px] flex gap-3 bg-card p-4 rounded-md">
 			{user.imageURL && (
-				<a href={user.link} target="_blank">
+				<a
+					className="min-w-[3rem] min-h-[3rem] w-12 h-12"
+					href={user.link}
+					target="_blank"
+				>
 					<div
-						className="min-w-[3rem] min-h-[3rem] w-12 h-12 bg-center bg-cover rounded-[50%]"
+						className="w-12 h-12 bg-center bg-cover rounded-[50%] border-card-dark border-[1px]"
 						style={{ backgroundImage: `url(${user.imageURL})` }}
 					></div>
 				</a>
@@ -60,7 +71,7 @@ const Post: FC<PostItemProps> = ({ post, onLike, remove, update }) => {
 				<div className="flex gap-2 mt-6">
 					<div className="flex items-center gap-1">
 						<IconButton
-							onClick={() => onLike(post.id)}
+							onClick={() => onLikeClicked(post.id)}
 							name="favorite"
 							size="sm"
 							color={
@@ -70,7 +81,11 @@ const Post: FC<PostItemProps> = ({ post, onLike, remove, update }) => {
 						<span className="comment">{post.likesCount}</span>
 					</div>
 					<div className="flex items-center gap-1">
-						<IconButton onClick={() => {}} name="comment" size="sm" />
+						<IconButton
+							onClick={() => onCommentClicked(post.id)}
+							name="comment"
+							size="sm"
+						/>
 						<span className="comment">{post.commentsCount}</span>
 					</div>
 					<span className="comment ml-auto">
