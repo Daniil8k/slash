@@ -5,5 +5,6 @@ export default interface IUser {
 	isApproved: boolean;
 	lastVisitDateTime: string;
 	link: string;
+	description?: string;
 	imageURL?: string;
 }

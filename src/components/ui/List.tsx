@@ -8,7 +8,7 @@ interface ListItemProps {
 
 const Post: FC<ListItemProps> = ({ data, renderItem }) => {
 	return (
-		<div className="flex flex-col gap-2">
+		<div className="flex flex-col gap-2 overflow-auto">
 			{data.map((item, index) => renderItem(item, index))}
 		</div>
 	);

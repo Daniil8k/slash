@@ -14,11 +14,6 @@ interface PostItemProps {
 	update?: () => void;
 }
 
-interface PostFooterBtnProps extends IconProps {
-	text: string | number;
-	onClick: () => void;
-}
-
 const Post: FC<PostItemProps> = ({
 	post,
 	onLikeClicked,
@@ -26,8 +21,6 @@ const Post: FC<PostItemProps> = ({
 	remove,
 	update,
 }) => {
-	const EMPTY_IMAGE_SRC =
-		"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D";
 	const user = post.user;
 
 	return (
