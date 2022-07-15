@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "@/styles/main.scss";
 import { BrowserRouter, Link } from "react-router-dom";
 import Router from "@/router";
@@ -8,19 +8,28 @@ import Header from "@/components/app/Header";
 import Panel from "@/components/app/Panel";
 
 function App() {
+	const [showMobileMenu, setShowMobileMenu] = useState(false);
+
 	return (
 		<BrowserRouter>
 			<div
-				className="grid grid-cols-12 gap-2 h-[100vh] max-w-7xl mx-auto p-1"
+				className="relative grid grid-cols-12 gap-2 h-[100vh] max-w-7xl mx-auto p-1"
 				style={{ gridTemplateRows: "40px 1fr 20px" }}
 			>
-				<Header className="col-span-12 row-span-1" />
-				<Menu className="col-span-3" />
-				<div className="flex justify-center col-span-6 min-h-0">
+				<Header className="col-span-12 row-span-1" onMenuClick={() => setShowMobileMenu(true)} />
+				<Menu
+					className={[
+						!showMobileMenu && "hidden",
+						"col-span-3 absolute top-0 z-10 h-full md:static md:flex",
+					].join(" ")}
+					onClose={() => setShowMobileMenu(false)}
+				/>
+				<div className="flex justify-center min-h-0 col-span-12 md:col-span-9 lg:col-span-6">
 					<Router />
 				</div>
-				<Panel className="col-span-3"/>
+				<Panel className="col-span-3 hidden lg:block" />
 				<Footer className="col-span-12" />
+				{showMobileMenu && <div className="backdrop md:hidden"></div>}
 			</div>
 		</BrowserRouter>
 	);

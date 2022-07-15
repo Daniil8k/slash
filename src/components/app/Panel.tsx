@@ -1,6 +1,5 @@
 import { FC } from "react";
 import Icon from "@/components/ui/Icon";
-import react from "@/assets/react.svg";
 
 interface PanelProps {
 	className?: string;
@@ -13,7 +12,6 @@ const Panel: FC<PanelProps> = ({ className }) => {
 				" "
 			)}
 		>
-			<img width="18px" height="18px" src={react} alt="" />
 		</div>
 	);
 };

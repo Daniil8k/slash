@@ -18,7 +18,7 @@ const Dropdown: FC<DropdownProps> = ({
 			{children}
 			<div className="dropdown-content">
 				{data.map((item) => (
-					<button onClick={() => onSelect(item)}>{item}</button>
+					<button onClick={() => onSelect(item)} key={item}>{item}</button>
 				))}
 			</div>
 		</div>

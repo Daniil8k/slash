@@ -38,9 +38,10 @@ const NAV_ITEMS = [
 
 interface NavProps {
 	className?: string;
+	onItemClick?: () => void;
 }
 
-const Nav: FC<NavProps> = ({ className }) => {
+const Nav: FC<NavProps> = ({ className, onItemClick }) => {
 	const location = useLocation();
 
 	return (
@@ -55,6 +56,8 @@ const Nav: FC<NavProps> = ({ className }) => {
 							isCurrentPath && "bg-[#1f2f43]",
 						].join(" ")}
 						to={item.path}
+						key={item.path}
+						onClick={onItemClick}
 					>
 						<div
 							className="w-[2px] h-full mr-4"

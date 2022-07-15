@@ -5,9 +5,10 @@ import IconButton from "@/components/ui/IconButton";
 
 interface HeaderProps {
 	className?: string;
+	onMenuClick?: () => void;
 }
 
-const Header: FC<HeaderProps> = ({ className }) => {
+const Header: FC<HeaderProps> = ({ className, onMenuClick }) => {
 	return (
 		<header
 			className={[
@@ -15,6 +16,11 @@ const Header: FC<HeaderProps> = ({ className }) => {
 				className,
 			].join(" ")}
 		>
+			<IconButton
+				onClick={onMenuClick}
+				className="mr-4 md:hidden"
+				name="menu"
+			/>
 			<div className="flex gap-2">
 				<img width="24px" height="24px" src={logo} alt="" />
 				<span className="italic">Slash</span>

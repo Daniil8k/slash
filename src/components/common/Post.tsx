@@ -24,7 +24,7 @@ const Post: FC<PostItemProps> = ({
 	const user = post.user;
 
 	return (
-		<div className="w-[500px] flex gap-3 bg-card p-4 rounded-md">
+		<div className="flex gap-3 bg-card p-4 rounded-md">
 			{user.imageURL && (
 				<a
 					className="min-w-[3rem] min-h-[3rem] w-12 h-12"
@@ -39,13 +39,15 @@ const Post: FC<PostItemProps> = ({
 			)}
 			<div className="flex-auto">
 				<div className="flex items-baseline gap-1 mb-2">
-					<div className="flex items-center gap-1">
-						<span>{user.name}</span>
-						{user.isApproved && (
-							<Icon name="verified" color="var(--color-primary)" />
-						)}
+					<div className="flex items-center flex-wrap gap-1">
+						<div className="flex items-center gap-1">
+							<span>{user.name}</span>
+							{user.isApproved && (
+								<Icon name="verified" color="var(--color-primary)" />
+							)}
+						</div>
+						<span className="comment">{user.login}</span>
 					</div>
-					<span className="comment">{user.login}</span>
 					<Dropdown
 						data={["Hide such content", "Block user"]}
 						onSelect={(item) => console.log(item)}
