@@ -31,6 +31,9 @@ module.exports = {
 				dark: {
 					DEFAULT: "var(--color-dark)",
 				},
+				success: {
+					DEFAULT: "var(--color-success)",
+				},
 				danger: {
 					DEFAULT: "var(--color-danger)",
 				},

@@ -24,12 +24,12 @@ function App() {
 					].join(" ")}
 					onClose={() => setShowMobileMenu(false)}
 				/>
-				<div className="flex justify-center min-h-0 col-span-12 md:col-span-9 lg:col-span-6">
+				<div className="flex justify-center min-h-0 col-span-12 md:col-span-6">
 					<Router />
 				</div>
-				<Panel className="col-span-3 hidden lg:block" />
+				<Panel className="col-span-3 hidden md:block" />
 				<Footer className="col-span-12" />
-				{showMobileMenu && <div className="backdrop md:hidden"></div>}
+				{showMobileMenu && <div className="backdrop md:hidden" onClick={() => setShowMobileMenu(false)}></div>}
 			</div>
 		</BrowserRouter>
 	);

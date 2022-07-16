@@ -1,0 +1,28 @@
+@keyframes success-blinking {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: #88e2c725;
+    }
+}
+
+
+@keyframes danger-blinking {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: #F2506D25;
+    }
+}
+
+.danger-blink-anim {
+    animation: danger-blinking 0.5s ease;
+}
+
+.success-blink-anim {
+    animation: success-blinking 0.5s ease;
+}

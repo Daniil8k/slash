@@ -24,7 +24,7 @@ const Menu: FC<MenuProps> = ({ className, onClose }) => {
 	return (
 		<div
 			className={[
-				"flex flex-col gap-1 bg-card py-4 rounded-md min-w-[200px]",
+				"flex flex-col gap-1 bg-card py-4 rounded-md",
 				className,
 			].join(" ")}
 		>
@@ -44,7 +44,7 @@ const Menu: FC<MenuProps> = ({ className, onClose }) => {
 				<Icon name="verified" color="var(--color-primary)" />
 			</div>
 			<span className="text-center comment font-bold">{user.login}</span>
-			<span className="text-center comment">{user.description}</span>
+			<span className="text-center comment px-1">{user.description}</span>
 			<hr className="my-4 mx-4 border-card-light" />
 			<Nav onItemClick={onClose} />
 			<hr className="my-4 mx-4 border-card-light" />
