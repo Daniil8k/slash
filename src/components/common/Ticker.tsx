@@ -102,7 +102,7 @@ const Ticker: FC<TickerProps> = ({ className }) => {
 	}, []);
 
 	return (
-		<div className={["", className].join(" ")}>
+		<div className={["w-full", className].join(" ")}>
 			<div className="grid grid-cols-3 mb-2">
 				<div className="comment">Coin</div>
 				<div className="comment text-right">Price</div>

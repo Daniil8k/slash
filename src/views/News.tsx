@@ -26,8 +26,8 @@ const News: FC<NewsProps> = ({}) => {
 			<Post
 				post={item}
 				key={item.id}
-				onLikeClicked={likePost}
-				onCommentClicked={() => {}}
+				onLikeClick={likePost}
+				onCommentClick={() => {}}
 			/>
 		);
 	};
