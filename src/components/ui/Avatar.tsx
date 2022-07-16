@@ -1,19 +1,20 @@
 import { FC } from "react";
+import { ESizes, sizeType } from "@/utils/constants";
 
 export interface AvatarProps {
 	className?: string;
-	imageURL?: string;
+	src?: string;
+	size?: sizeType;
 }
 
-const Avatar: FC<AvatarProps> = ({ className, imageURL }) => {
+const Avatar: FC<AvatarProps> = ({ className, src, size = "default" }) => {
 	return (
 		<div
-			className={[
-				"min-w-16 min-h-16 w-16 h-16 bg-center bg-cover rounded-[50%] border-card-dark border-[1px] mx-auto",
-				className,
-			].join(" ")}
+			className="bg-center bg-cover rounded-[50%] border-card-dark border-[1px] bg-gray-200/10"
 			style={{
-				backgroundImage: `url(${imageURL})`,
+				width: `${ESizes[size]}px`,
+				height: `${ESizes[size]}px`,
+				backgroundImage: `url(${src})`,
 			}}
 		></div>
 	);

@@ -1,16 +1,6 @@
 import { FC } from "react";
 import { Icon } from "@iconify/react";
-
-enum ESizes {
-	"2xl" = 62,
-	xl = 48,
-	lg = 36,
-	md = 24,
-	default = 18,
-	sm = 16,
-}
-
-type sizeType = keyof typeof ESizes;
+import { ESizes, sizeType } from "@/utils/constants";
 
 export interface IconProps {
 	name: string;
