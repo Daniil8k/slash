@@ -1,7 +1,9 @@
-# Slash
-React social network
+# Slash 💹
+The simple trader's social network.
 
-![chrome-capture-2022-6-16](https://user-images.githubusercontent.com/93822098/179360883-750b985d-a722-45c9-a7c6-dee76450e34e.gif)
+React + RTK + Tailwind + Vite.
+
+![Frame 8](https://user-images.githubusercontent.com/93822098/179400430-f9bc98e6-91c0-4081-900e-ea248d41784f.png)
 
 ## Project setup
 ```
