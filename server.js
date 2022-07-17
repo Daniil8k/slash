@@ -1,6 +1,6 @@
 import express from "express";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,4 +14,7 @@ app.get(/.*/, function (req, res) {
 });
 
 app.listen(port);
-console.log("Server started...");
+
+console.log(
+	`Production server started at http://localhost:${port} \nPleace run 'npm run dev' for development. \n`
+);
