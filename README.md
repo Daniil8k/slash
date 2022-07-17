@@ -1,5 +1,5 @@
-# Slash
-Simple social network.
+# Slash 💹
+The simple trader's social network.
 
 React + RTK + Tailwind + Vite.
 
