@@ -32,7 +32,7 @@ function App() {
 		<BrowserRouter>
 			<div
 				className="relative grid grid-cols-12 gap-2 h-[100vh] max-w-7xl mx-auto p-1"
-				style={{ gridTemplateRows: "40px 1fr 20px" }}
+				style={{ gridTemplateRows: "3rem 1fr 1.5rem" }}
 			>
 				<Header
 					className="col-span-12 row-span-1"

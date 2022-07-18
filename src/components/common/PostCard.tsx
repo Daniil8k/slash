@@ -32,7 +32,7 @@ const PostCard: FC<PostCardProps> = ({
 				</a>
 				<div className="flex items-center gap-1 flex-wrap">
 					<div className="flex items-center gap-1">
-						<span>{user.name}</span>
+						<span className="text-xl">{user.name}</span>
 						{user.isApproved && (
 							<Icon name="verified" color="var(--color-primary)" />
 						)}

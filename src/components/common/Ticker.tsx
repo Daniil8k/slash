@@ -62,12 +62,12 @@ const Ticker: FC<TickerProps> = ({ className }) => {
 					>
 						<div className="flex items-center gap-2 ml-1">
 							<CoinIcon name={symbol.baseAsset} />
-							<span className="text-sm">{symbol.baseAsset}</span>
+							<span>{symbol.baseAsset}</span>
 						</div>
-						<span className="text-sm text-right">
+						<span className="text-right">
 							{symbol.price ? symbol.price : "..."}
 						</span>
-						<span className="text-sm text-right">
+						<span className="text-right">
 							{symbol.volume ? symbol.volume : "..."}
 						</span>
 						{!!symbol.price && (

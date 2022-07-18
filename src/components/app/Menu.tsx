@@ -40,11 +40,15 @@ const Menu: FC<MenuProps> = ({ className, onClose }) => {
 				}}
 			></div>
 			<div className="flex items-center gap-1 mx-auto">
-				<span>{user.name}</span>
+				<span className="text-xl">{user.name}</span>
 				<Icon name="verified" color="var(--color-primary)" />
 			</div>
-			<span className="text-center comment font-bold">{user.login}</span>
-			<span className="text-center comment px-1">{user.description}</span>
+			<span className="text-center text-neutral font-bold mb-4">
+				{user.login}
+			</span>
+			<span className="text-center text-sm text-neutral px-2 mb-1">
+				{user.description}
+			</span>
 			<hr className="my-4 mx-4 border-card-light" />
 			<Nav onItemClick={onClose} />
 			<hr className="my-4 mx-4 border-card-light" />

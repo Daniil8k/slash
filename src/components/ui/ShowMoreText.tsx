@@ -14,17 +14,17 @@ const ShowMoreText: FC<ShowMoreTextProps> = ({
 	const [isExpanded, setIsExpanded] = useState(false);
 
 	if (text.length <= maxLength) {
-		return <p className={["text-xs", className].join(" ")}>{text}</p>;
+		return <p className={className}>{text}</p>;
 	}
 
 	return (
 		<div className={className}>
-			<span className="text-xs">
+			<span>
 				{!isExpanded ? text.slice(0, 100) + "..." : text}
 			</span>
 			<button
 				onClick={() => setIsExpanded((isExpanded) => !isExpanded)}
-				className="ml-2 text-primary text-tiny"
+				className="ml-2 text-primary text-sm"
 			>
 				{isExpanded ? "less" : "more"}
 			</button>

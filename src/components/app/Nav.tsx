@@ -11,27 +11,27 @@ interface INavItem {
 const NAV_ITEMS = [
 	{
 		path: "/",
-		label: "news",
+		label: "News",
 		icon: "newspaper",
 	},
 	{
 		path: "/messages",
-		label: "messages",
+		label: "Messages",
 		icon: "message",
 	},
 	{
 		path: "/friends",
-		label: "friends",
+		label: "Friends",
 		icon: "people",
 	},
 	{
 		path: "/events",
-		label: "events",
+		label: "Events",
 		icon: "star",
 	},
 	{
 		path: "/settings",
-		label: "settings",
+		label: "Settings",
 		icon: "settings",
 	},
 ] as INavItem[];
@@ -68,7 +68,7 @@ const Nav: FC<NavProps> = ({ className, onItemClick }) => {
 						/>
 						<div
 							className={[
-								"flex items-center gap-1 mr-4 py-0.5",
+								"flex items-center gap-2 mr-4 py-0.5",
 								isCurrentPath && "text-primary-light",
 							].join(" ")}
 						>
@@ -80,7 +80,7 @@ const Nav: FC<NavProps> = ({ className, onItemClick }) => {
 										: "var(--color-neutral)"
 								}
 							/>
-							<span className="text-xs">{item.label}</span>
+							<span className="text-lg">{item.label}</span>
 						</div>
 					</Link>
 				);

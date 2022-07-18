@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = ({ className, onMenuClick }) => {
 	return (
 		<header
 			className={[
-				"flex items-center bg-card py-2 px-4 rounded-md",
+				"flex items-center bg-card py-3 px-4 rounded-md",
 				className,
 			].join(" ")}
 		>
@@ -21,9 +21,9 @@ const Header: FC<HeaderProps> = ({ className, onMenuClick }) => {
 				className="mr-4 md:hidden"
 				name="menu"
 			/>
-			<div className="flex gap-2">
-				<img width="24px" height="24px" src={logo} alt="" />
-				<span className="italic">Slash</span>
+			<div className="flex items-center gap-2">
+				<img width="32px" height="32px" src={logo} alt="" />
+				<span className="text-lg italic">Slash</span>
 			</div>
 			<div className="flex text-baseline gap-1 ml-auto">
 				<span className="comment">Exit</span>
