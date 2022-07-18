@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import List from "@/components/ui/List";
-import Post from "@/components/common/Post";
+import PostCard from "@/components/common/PostCard";
 import IPost from "@/models/IPost";
 import postsWithUsers from "../../db/postsWithUsers.json";
 
@@ -23,7 +23,7 @@ const News: FC<NewsProps> = ({}) => {
 
 	const renderPost = (item: IPost) => {
 		return (
-			<Post
+			<PostCard
 				post={item}
 				key={item.id}
 				onLikeClick={likePost}

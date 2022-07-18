@@ -1,13 +1,13 @@
 import IPost from "@/models/IPost";
 import { FC } from "react";
 import moment from "moment";
-import Icon, { IconProps } from "@/components/ui/Icon";
+import Icon from "@/components/ui/Icon";
 import IconButton from "@/components/ui/IconButton";
 import Dropdown from "../ui/Dropdown";
 import ShowMoreText from "../ui/ShowMoreText";
 import Avatar from "../ui/Avatar";
 
-interface PostItemProps {
+interface PostCardProps {
 	post: IPost;
 	onLikeClick: (postId: number) => void;
 	onCommentClick: (postId: number) => void;
@@ -15,7 +15,7 @@ interface PostItemProps {
 	update?: () => void;
 }
 
-const Post: FC<PostItemProps> = ({
+const PostCard: FC<PostCardProps> = ({
 	post,
 	onLikeClick,
 	onCommentClick,
@@ -24,7 +24,7 @@ const Post: FC<PostItemProps> = ({
 }) => {
 	const user = post.user;
 
-	const PostHeader: FC = () => {
+	const PostCardHeader: FC = () => {
 		return (
 			<div className="flex items-center gap-1 mb-2">
 				<a href={user.link} target="_blank">
@@ -50,7 +50,7 @@ const Post: FC<PostItemProps> = ({
 		);
 	};
 
-	const PostFooter: FC = () => {
+	const PostCardFooter: FC = () => {
 		return (
 			<div className="flex gap-2 mt-6">
 				<div className="flex items-center gap-1">
@@ -81,7 +81,7 @@ const Post: FC<PostItemProps> = ({
 
 	return (
 		<div className="flex flex-col bg-card p-4 rounded-md">
-			<PostHeader />
+			<PostCardHeader />
 			<ShowMoreText className="px-1" text={post.title} />
 			{post.imageURL && (
 				<div
@@ -89,9 +89,9 @@ const Post: FC<PostItemProps> = ({
 					style={{ backgroundImage: `url(${post.imageURL})` }}
 				></div>
 			)}
-			<PostFooter />
+			<PostCardFooter />
 		</div>
 	);
 };
 
-export default Post;
+export default PostCard;
