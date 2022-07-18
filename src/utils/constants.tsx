@@ -8,3 +8,31 @@ export enum ESizes {
 }
 
 export type sizeType = keyof typeof ESizes;
+
+export const DEFAULT_COIN_PAIRS = [
+	"BTC/USDT",
+	"ETH/USDT",
+	"USDC/USDT",
+	"BNB/USDT",
+	"BUSD/USDT",
+	"XRP/USDT",
+	"ADA/USDT",
+	"SOL/USDT",
+	"DOGE/USDT",
+	"DOT/USDT",
+	"TRX/USDT",
+	"SHIB/USDT",
+	"MATIC/USDT",
+	"AVAX/USDT",
+	"UNI/USDT",
+	"LTC/USDT",
+	"FTT/USDT",
+	"LINK/USDT",
+	"XLM/USDT",
+	"ATOM/USDT",
+	"NEAR/USDT",
+	"XMR/USDT",
+	"ALGO/USDT",
+	"BCH/USDT",
+	"ETC/USDT",
+];

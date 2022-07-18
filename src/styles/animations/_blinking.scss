@@ -4,7 +4,7 @@
     }
 
     to {
-        background-color: #88e2c725;
+        background-color: #88e2c720;
     }
 }
 
@@ -15,14 +15,14 @@
     }
 
     to {
-        background-color: #F2506D25;
+        background-color: #F2506D20;
     }
 }
 
 .danger-blink-anim {
-    animation: danger-blinking 0.5s ease;
+    animation: danger-blinking 0.7s ease;
 }
 
 .success-blink-anim {
-    animation: success-blinking 0.5s ease;
+    animation: success-blinking 0.7s ease;
 }
