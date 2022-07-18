@@ -1,4 +1,5 @@
 import IUser from "@/models/IUser";
+import { useAppSelector } from "@/store";
 import { FC } from "react";
 import Icon from "../ui/Icon";
 import IconButton from "../ui/IconButton";
@@ -10,16 +11,7 @@ interface MenuProps {
 }
 
 const Menu: FC<MenuProps> = ({ className, onClose }) => {
-	const user = {
-		id: 18,
-		isApproved: true,
-		login: "pbernsh@unicef.org",
-		name: "Peirce Berns",
-		imageURL: "https://boredhumans.b-cdn.net/faces2/3.jpg",
-		lastVisitDateTime: "2022-06-27T08:50:25Z",
-		link: "https://boredhumans.b-cdn.net/faces2/3.jpg",
-		description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
-	} as IUser;
+	const { user } = useAppSelector((state) => state.authSlice);
 
 	return (
 		<div

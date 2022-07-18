@@ -14,6 +14,8 @@ const Avatar: FC<AvatarProps> = ({ className, src, size = "default" }) => {
 			style={{
 				width: `${ESizes[size]}px`,
 				height: `${ESizes[size]}px`,
+				minWidth: `${ESizes[size]}px`,
+				minHeight: `${ESizes[size]}px`,
 				backgroundImage: `url(${src})`,
 			}}
 		></div>
