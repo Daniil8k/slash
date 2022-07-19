@@ -6,6 +6,7 @@ export default interface IPost {
 	commentsCount: number;
 	likesCount: number;
 	isLiked: boolean;
+	date?: string;
 	imageURL?: string;
 	user: IUser;
 }

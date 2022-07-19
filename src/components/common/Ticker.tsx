@@ -28,7 +28,7 @@ const Ticker: FC<TickerProps> = ({ className }) => {
 		stream.current = BinanceAPI.openAllTickerStream(
 			initSymbols,
 			(newSymbols) => {
-				setSymbols(newSymbols);
+				setSymbols(JSON.parse(JSON.stringify(newSymbols)));
 			}
 		);
 	};
