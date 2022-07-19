@@ -11,18 +11,20 @@ interface PostCardProps {
 	post: IPost;
 	onLikeClick: (postId: number) => void;
 	onCommentClick: (postId: number) => void;
-	remove?: () => void;
-	update?: () => void;
+	onDeleteClick: (postId: number) => void;
 }
 
 const PostCard: FC<PostCardProps> = ({
 	post,
 	onLikeClick,
 	onCommentClick,
-	remove,
-	update,
+	onDeleteClick,
 }) => {
 	const user = post.user;
+
+	const deletePost = () => {
+		onDeleteClick(post.id);
+	};
 
 	const PostCardHeader: FC = () => {
 		return (
@@ -40,8 +42,8 @@ const PostCard: FC<PostCardProps> = ({
 					<span className="comment">{user.login}</span>
 				</div>
 				<Dropdown
-					data={["Hide such content", "Block user"]}
-					onSelect={(item) => console.log(item)}
+					data={["Delete post"]}
+					onSelect={deletePost}
 					className="ml-auto"
 				>
 					<IconButton name="more-horiz" />
@@ -73,7 +75,7 @@ const PostCard: FC<PostCardProps> = ({
 					<span className="comment">{post.commentsCount}</span>
 				</div>
 				<span className="comment ml-auto">
-					{moment(user.lastVisitDateTime).fromNow()}
+					{moment(post.date).fromNow()}
 				</span>
 			</div>
 		);

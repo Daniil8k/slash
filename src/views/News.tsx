@@ -11,24 +11,28 @@ interface NewsProps {
 
 const News: FC<NewsProps> = ({}) => {
 	const { data: posts, error, isLoading } = postAPI.useFetchAllPostsQuery(120);
+	const [deletePost, {}] = postAPI.useDeletePostMutation();
+	const [updatePost, {}] = postAPI.useUpdatePostMutation();
 
-	// const likePost = (postId: number) => {
-	// 	let newPosts = [...posts];
-	// 	let post = newPosts.find((post) => post.id === postId);
-	// 	if (post) {
-	// 		post.isLiked = !post.isLiked;
-	// 	}
+	const removePost = async (postId: number) => {
+		await deletePost(postId);
+	};
 
-	// 	setPosts(newPosts);
-	// };
+	const likePost = async (post: IPost) => {
+		let newPost = { ...post };
+		newPost.isLiked = !newPost.isLiked;
+
+		await updatePost(newPost);
+	};
 
 	const renderPost = (item: IPost) => {
 		return (
 			<PostCard
 				post={item}
 				key={item.id}
-				onLikeClick={() => {}}
+				onLikeClick={likePost.bind(this, item)}
 				onCommentClick={() => {}}
+				onDeleteClick={removePost}
 			/>
 		);
 	};

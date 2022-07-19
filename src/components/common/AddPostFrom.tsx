@@ -19,6 +19,7 @@ const AddPostFrom: FC<PostCardProps> = ({}) => {
 	const [post, setPost] = useState<IPost>({
 		id: Math.random(),
 		title: "",
+		date: new Date().toISOString(),
 		commentsCount: 0,
 		likesCount: 0,
 		isLiked: false,
@@ -41,6 +42,7 @@ const AddPostFrom: FC<PostCardProps> = ({}) => {
 			id: Math.random(),
 			title: "",
 			imageURL: "",
+			date: new Date().toISOString(),
 		}));
 	};
 
