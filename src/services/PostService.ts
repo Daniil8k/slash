@@ -1,7 +1,7 @@
 import IPost from "@/models/IPost";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const postAPI = createApi({
 	reducerPath: "postAPI",
@@ -21,6 +21,14 @@ export const postAPI = createApi({
 			query: (post) => ({
 				url: "/posts",
 				method: "POST",
+				body: post,
+			}),
+			invalidatesTags: ["Post"],
+		}),
+		deletePost: build.mutation<IPost, IPost>({
+			query: (post) => ({
+				url: `/posts/${post.id}`,
+				method: "DELETE",
 				body: post,
 			}),
 			invalidatesTags: ["Post"],

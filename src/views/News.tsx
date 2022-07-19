@@ -2,7 +2,6 @@ import { FC, useState } from "react";
 import List from "@/components/ui/List";
 import PostCard from "@/components/common/PostCard";
 import IPost from "@/models/IPost";
-import postsWithUsers from "../../db/postsWithUsers.json";
 import { postAPI } from "@/services/PostService";
 import AddPostFrom from "@/components/common/AddPostFrom";
 
