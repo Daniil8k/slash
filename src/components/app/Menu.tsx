@@ -16,7 +16,7 @@ const Menu: FC<MenuProps> = ({ className, onClose }) => {
 	return (
 		<div
 			className={[
-				"flex flex-col gap-1 bg-card py-4 rounded-md",
+				"card flex flex-col gap-1 bg-card",
 				className,
 			].join(" ")}
 		>
