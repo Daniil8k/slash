@@ -1,5 +1,7 @@
 # Slash 💹
-The trader's social network (React + RTK + Tailwind + Vite).
+React + RTK dashboard.
+
+CRUD posts with RTK Query, stream from Binance.
 
 ![Frame 8](https://user-images.githubusercontent.com/93822098/179400430-f9bc98e6-91c0-4081-900e-ea248d41784f.png)
 
