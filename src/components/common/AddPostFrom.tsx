@@ -14,7 +14,8 @@ interface PostCardProps {}
 
 const AddPostFrom: FC<PostCardProps> = ({}) => {
 	const { user } = useAppSelector((state) => state.authSlice);
-	const [createPost, {}] = postAPI.useCreatePostMutation();
+	const [createPost, { isLoading: isCreateLoading }] =
+		postAPI.useCreatePostMutation();
 	const [post, setPost] = useState<IPost>({
 		id: Math.random(),
 		title: "",
@@ -24,13 +25,16 @@ const AddPostFrom: FC<PostCardProps> = ({}) => {
 		imageURL: "",
 		user,
 	});
-	const [image, setImage] = useState("");
 
 	const setPostProp = (key: keyof IPost, value: string) => {
 		setPost((post) => ({ ...post, [key]: value }));
 	};
 
 	const handleCreate = async () => {
+		if (!post.title && !post.imageURL) {
+			return;
+		}
+
 		await createPost(post);
 		setPost((post) => ({
 			...post,
@@ -51,7 +55,11 @@ const AddPostFrom: FC<PostCardProps> = ({}) => {
 					value={post.title}
 					onChange={(e) => setPostProp("title", e.target.value)}
 				/>
-				<IconButton name="send" onClick={handleCreate} />
+				<IconButton
+					name="send"
+					isLoading={isCreateLoading}
+					onClick={handleCreate}
+				/>
 			</div>
 			<UploadImage
 				image={post.imageURL}
