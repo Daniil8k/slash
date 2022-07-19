@@ -37,10 +37,18 @@ const News: FC<NewsProps> = ({}) => {
 		);
 	};
 
+	const renderSkeletonPost = () => {
+		return <div className="skeleton-card"></div>;
+	};
+
 	return (
 		<div className="flex-auto flex flex-col gap-2">
 			<AddPostFrom />
-			{posts && <List data={[...posts].reverse()} renderItem={renderPost} />}
+			{isLoading ? (
+				<List data={[1, 2]} renderItem={renderSkeletonPost} />
+			) : (
+				posts && <List data={[...posts].reverse()} renderItem={renderPost} />
+			)}
 		</div>
 	);
 };

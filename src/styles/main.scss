@@ -2,12 +2,13 @@
 @import "./settings/base";
 @import "./settings/variables";
 
+/* == Animations == */
+@import './animations/blinking';
+@import './animations/rotate';
+
 /* == Components == */
 @import './components/comment';
 @import './components/dropdown';
 @import './components/backdrop';
 @import './components/card';
-
-/* == Animations == */
-@import './animations/blinking';
-@import './animations/rotate';
+@import './components/skeleton-card';
