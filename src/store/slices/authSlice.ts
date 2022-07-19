@@ -7,14 +7,14 @@ interface AuthState {
 
 const initialState: AuthState = {
 	user: {
-		id: 18,
+		id: 321,
 		isApproved: true,
-		login: "pbernsh@unicef.org",
-		name: "Peirce Berns",
-		imageURL: "https://boredhumans.b-cdn.net/faces2/22.jpg",
+		login: "@elonmusk",
+		name: "Elon Musk",
+		imageURL: "https://i0.wp.com/www.entrepreneurs.ng/wp-content/uploads/2019/06/Elon-Musk-6.jpg?fit=940%2C529&ssl=1",
 		lastVisitDateTime: "2022-06-27T08:50:25Z",
-		link: "https://boredhumans.b-cdn.net/faces2/22.jpg",
-		description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+		link: "https://i0.wp.com/www.entrepreneurs.ng/wp-content/uploads/2019/06/Elon-Musk-6.jpg?fit=940%2C529&ssl=1",
+		description: "Mars & Cars, Chips & Dips",
 	},
 };
 
