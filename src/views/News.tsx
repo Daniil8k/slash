@@ -20,6 +20,8 @@ const News: FC<NewsProps> = ({}) => {
 
 	const likePost = async (post: IPost) => {
 		let newPost = { ...post };
+
+		newPost.isLiked ? newPost.likesCount-- : newPost.likesCount++;
 		newPost.isLiked = !newPost.isLiked;
 
 		await updatePost(newPost);
