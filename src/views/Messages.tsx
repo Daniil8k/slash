@@ -1,7 +1,8 @@
+import PageUnderConstruction from "@/components/app/PageUnderConstruction";
 import { FC } from "react";
 
-const Messages = ({}) => {
-	return <div className="flex items-center justify-center">Messages</div>;
+const Messages: FC = ({}) => {
+	return <PageUnderConstruction name="Messages" />;
 };
 
 export default Messages;

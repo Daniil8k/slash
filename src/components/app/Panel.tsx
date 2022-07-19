@@ -9,7 +9,7 @@ const Panel: FC<PanelProps> = ({ className }) => {
 	return (
 		<div
 			className={[
-				"flex flex-col items-center bg-card p-2 rounded-md",
+				"card flex flex-col items-center px-2",
 				className,
 			].join(" ")}
 		>

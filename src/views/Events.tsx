@@ -1,5 +1,8 @@
-const Events = ({}) => {
-	return <div className="flex items-center justify-center">Events</div>;
+import PageUnderConstruction from "@/components/app/PageUnderConstruction";
+import { FC } from "react";
+
+const Events: FC = ({}) => {
+	return <PageUnderConstruction name="Events" />;
 };
 
 export default Events;

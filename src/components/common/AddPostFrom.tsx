@@ -47,7 +47,7 @@ const AddPostFrom: FC<PostCardProps> = ({}) => {
 	};
 
 	return (
-		<div className="flex flex-col bg-card p-4 rounded-md">
+		<div className="card flex flex-col">
 			<div className="flex items-center gap-2 mb-3">
 				<Avatar src={user.imageURL} size="xl" />
 				<input

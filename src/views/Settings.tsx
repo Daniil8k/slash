@@ -1,5 +1,9 @@
+import PageUnderConstruction from "@/components/app/PageUnderConstruction";
+
 const Settings = ({}) => {
-	return <div className="flex items-center justify-center">Settings</div>;
+	return (
+		<PageUnderConstruction name="Settings" />
+	);
 };
 
 export default Settings;

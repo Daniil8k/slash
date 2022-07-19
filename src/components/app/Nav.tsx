@@ -52,7 +52,7 @@ const Nav: FC<NavProps> = ({ className, onItemClick }) => {
 				return (
 					<Link
 						className={[
-							"relative flex items-center gap-1 my-1",
+							"relative flex items-center my-1",
 							isCurrentPath && "bg-[#1f2f43]",
 						].join(" ")}
 						to={item.path}

@@ -82,7 +82,7 @@ const PostCard: FC<PostCardProps> = ({
 	};
 
 	return (
-		<div className="flex flex-col bg-card p-4 rounded-md">
+		<div className="card flex flex-col">
 			<PostCardHeader />
 			<ShowMoreText className="px-1" text={post.title} />
 			{post.imageURL && (

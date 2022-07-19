@@ -1,5 +1,8 @@
-const Friends = ({}) => {
-	return <div className="flex items-center justify-center">Friends</div>;
+import PageUnderConstruction from "@/components/app/PageUnderConstruction";
+import { FC } from "react";
+
+const Friends: FC = ({}) => {
+	return <PageUnderConstruction name="Friends" />;
 };
 
 export default Friends;

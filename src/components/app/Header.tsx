@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = ({ className, onMenuClick }) => {
 	return (
 		<header
 			className={[
-				"flex items-center bg-card py-3 px-4 rounded-md",
+				"card flex items-center px-4",
 				className,
 			].join(" ")}
 		>
