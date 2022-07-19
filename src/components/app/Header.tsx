@@ -25,10 +25,6 @@ const Header: FC<HeaderProps> = ({ className, onMenuClick }) => {
 				<img width="32px" height="32px" src={logo} alt="" />
 				<span className="text-lg italic">Slash</span>
 			</div>
-			<div className="flex text-baseline gap-1 ml-auto">
-				<span className="comment">Exit</span>
-				<IconButton name="logout" />
-			</div>
 		</header>
 	);
 };
