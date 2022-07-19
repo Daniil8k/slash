@@ -67,16 +67,13 @@ const PostCard: FC<PostCardProps> = ({
 					<span className="comment">{post.likesCount}</span>
 				</div>
 				<div className="flex items-center gap-1">
-					<IconButton
-						onClick={() => onCommentClick(post.id)}
+					<Icon
 						name="comment"
 						size="sm"
 					/>
 					<span className="comment">{post.commentsCount}</span>
 				</div>
-				<span className="comment ml-auto">
-					{moment(post.date).fromNow()}
-				</span>
+				<span className="comment ml-auto">{moment(post.date).fromNow()}</span>
 			</div>
 		);
 	};
