@@ -18,7 +18,7 @@ const Footer: FC<FooterProps> = ({ className }) => {
 				target="_blank"
 			>
 				<Icon name="github" />
-				<span className="text-xs">Daniil8k</span>
+				<span className="text-xs">Daniil8k &copy;</span>
 			</a>
 		</footer>
 	);
