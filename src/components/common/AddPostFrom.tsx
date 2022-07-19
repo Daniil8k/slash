@@ -1,14 +1,11 @@
 import IPost from "@/models/IPost";
 import { FC, useState } from "react";
-import moment from "moment";
-import Icon from "@/components/ui/Icon";
 import IconButton from "@/components/ui/IconButton";
-import Dropdown from "../ui/Dropdown";
-import ShowMoreText from "../ui/ShowMoreText";
 import Avatar from "../ui/Avatar";
 import { useAppSelector } from "@/store";
 import UploadImage from "../ui/UploadImage";
 import { postAPI } from "@/services/PostService";
+import Input from "@/components/ui/Input";
 
 interface PostCardProps {}
 
@@ -48,14 +45,13 @@ const AddPostFrom: FC<PostCardProps> = ({}) => {
 
 	return (
 		<div className="card flex flex-col h-fit">
+			<span className="mb-1">Create, like or delete posts with RTK Query</span>
 			<div className="flex items-center gap-2 mb-3">
 				<Avatar src={user.imageURL} size="xl" />
-				<input
-					className="bg-card-light rounded-md border-[1px] border-card-dark w-full h-10 px-2"
-					placeholder="Start a post"
-					type="text"
+				<Input
 					value={post.title}
-					onChange={(e) => setPostProp("title", e.target.value)}
+					setValue={(value) => setPostProp("title", value)}
+					placeholder="Start a post"
 				/>
 				<IconButton
 					name="send"

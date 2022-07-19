@@ -32,7 +32,7 @@ const UploadImage: FC<UploadImageProps> = ({ image, setImage }) => {
 					htmlFor="upload-file"
 					className="flex items-center justify-center w-full h-12 border-[1px] border-dashed rounded-md cursor-pointer"
 				>
-					<span>Upload an image</span>
+					<span>Choose the image</span>
 				</label>
 			)}
 			<input
